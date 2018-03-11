@@ -1,0 +1,1589 @@
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('5529404587127941380', 0)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateBooks (20180310092906)
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE TABLE `books` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `title` varchar(255), `description` varchar(255), `author` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180310092906')[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-03-10 09:34:00', '2018-03-10 09:34:00')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('5529404587127941380')[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:04:50 +0530
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/sb051853/.rvm/rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/sb051853/.rvm/rubies/ruby-2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.5/lib/rails/templates/rails/welcome/index.html.erb (8.8ms)
+Completed 200 OK in 66ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:25:37 +0530
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.1.5) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:25:50 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (5.1.5) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:26:28 +0530
+Processing by BooksController#index as HTML
+Completed 406 Not Acceptable in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:27:11 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 728ms (Views: 726.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 15:27:14 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 16:22:27 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 16:22:41 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 16:22:42 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 16:23:45 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 21:58:35 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 22:04:05 +0530
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2828ms (Views: 2820.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 22:04:10 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/book/new" for 127.0.0.1 at 2018-03-10 22:10:18 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/book/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:10:26 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 61ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:11:30 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 61ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/book/new" for 127.0.0.1 at 2018-03-10 22:11:41 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/book/new"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:11:50 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:11:58 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 53ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:12:00 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 58ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:12:40 +0530
+Processing by BooksController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant BooksController::Books):
+  
+app/controllers/books_controller.rb:6:in `new'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:12:41 +0530
+Processing by BooksController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant BooksController::Books):
+  
+app/controllers/books_controller.rb:6:in `new'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:12:57 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 59ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:12:58 +0530
+Processing by BooksController#new as HTML
+Completed 406 Not Acceptable in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (BooksController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:14:40 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 36.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:22:04 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (0.7ms)
+  Rendered books/new.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:1: syntax error, unexpected keyword_do_block
+...end=( simple_form_for @book |do| );@output_buffer.safe_appen...
+...                             ^~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );
+...                            ^~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/books/_form.html.erb:1: syntax error, unexpected keyword_do_block
+app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+app/views/books/new.html.erb:2:in `_app_views_books_new_html_erb___3780760771599227215_70259484443040'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:23:04 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (0.5ms)
+  Rendered books/new.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );
+...                            ^~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+app/views/books/new.html.erb:2:in `_app_views_books_new_html_erb___3780760771599227215_70259486526240'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:23:06 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (0.4ms)
+  Rendered books/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );
+...                            ^~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/sb051853/ruby-on-rails/BookReview/app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/books/_form.html.erb:3: syntax error, unexpected keyword_end
+app/views/books/_form.html.erb:5: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/books/_form.html.erb:7: syntax error, unexpected keyword_end, expecting ')'
+app/views/books/new.html.erb:2:in `_app_views_books_new_html_erb___3780760771599227215_70259423708740'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:23:50 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (107.7ms)
+  Rendered books/new.html.erb within layouts/application (109.1ms)
+Completed 200 OK in 139ms (Views: 137.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:24:14 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (1.8ms)
+  Rendered books/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:24:49 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (2.7ms)
+  Rendered books/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:25:05 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.2ms)
+  Rendered books/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:25:23 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/new.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1+)):
+    2:   <%= f.input :title, label: "Book Title"  %>
+    3:   <%= f.input :description, label: "Description"  %>
+    4:   <%= f.input :author, label: "Author"  %>
+    5:   <%= f.button  %>
+    6: <% end %>
+  
+app/views/books/_form.html.erb:5:in `block in _app_views_books__form_html_erb___4477785605217560314_70259427748600'
+app/views/books/_form.html.erb:1:in `_app_views_books__form_html_erb___4477785605217560314_70259427748600'
+app/views/books/new.html.erb:2:in `_app_views_books_new_html_erb___3780760771599227215_70259427977040'
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:25:38 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.0ms)
+  Rendered books/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-03-10 22:25:41 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QQoDWdJvy0Q25C/arzycC+rTuva8y0BYqmmKG5M7R0OddBFrr3chF8EeClrU4xNJO+LxXFlBMvqbXPJISWiFwA==", "book"=>{"title"=>"", "description"=>"", "author"=>""}, "commit"=>"Create Book"}
+No template found for BooksController#create, rendering head :no_content
+Completed 204 No Content in 53ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:25:44 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (2.9ms)
+  Rendered books/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:26:25 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (2.7ms)
+  Rendered books/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-03-10 22:26:30 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GReP0AYQx9d7tNvZFaRf8fS3vJS6OWYJTstRE3W4xRU2sGTJsd+QrLHM0qj4s/9QZcG3f+4H9lA9IQdRftoV2g==", "book"=>{"title"=>"hjasjdajh", "description"=>"asdjhadsjajh", "author"=>"adsdhjdasjhj"}, "commit"=>"Create Book"}
+No template found for BooksController#create, rendering head :no_content
+Completed 204 No Content in 51ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:37:57 +0530
+  
+SyntaxError (/Users/sb051853/ruby-on-rails/BookReview/app/controllers/books_controller.rb:23: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/books_controller.rb:23: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/books/new" for 127.0.0.1 at 2018-03-10 22:38:16 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.1ms)
+  Rendered books/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 48ms (Views: 39.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-03-10 22:38:21 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WwQnGhbwFlKoCu8/l4ZqqthCXWUFIp8uoSKgZsUVrpGHejUoa+j8AV/wyr/sWeXoCXMWz+Co7YyQF9g1H0ZsEg==", "book"=>{"title"=>"hsahdh", "description"=>"ahdahsh", "author"=>"adhadhh"}, "commit"=>"Create Book"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`title`, `description`, `author`, `created_at`, `updated_at`) VALUES ('hsahdh', 'ahdahsh', 'adhadhh', '2018-03-10 17:08:21', '2018-03-10 17:08:21')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 22:38:21 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1> Index page </h1>
+    2: <%= @book.each do |book| %>
+    3:     <h2><%= book.title %> </h2>
+    4: <% end %>
+  
+app/views/books/index.html.erb:2:in `_app_views_books_index_html_erb___1442995764576225284_70259423728260'
+Started GET "/" for 127.0.0.1 at 2018-03-10 22:38:39 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-10 22:38:48 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:11:28 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (27.0ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 211ms (Views: 163.0ms | ActiveRecord: 27.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:11:31 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-11 12:12:11 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (12.4ms)
+  Rendered books/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-03-11 12:12:24 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YzwYAGAtIae6/qShCWnHHMMVVyU7Z2weWF5ThYO2WFm/QgoyHTXL9E0EgSFytkheEiQcj97tHrxpayvWWeWa2g==", "book"=>{"title"=>"Jungle Book", "description"=>"Jungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle Book", "author"=>"Shirshandu"}, "commit"=>"Create Book"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO `books` (`title`, `description`, `author`, `created_at`, `updated_at`) VALUES ('Jungle Book', 'Jungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle BookJungle Book', 'Shirshandu', '2018-03-11 06:42:24', '2018-03-11 06:42:24')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:12:24 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 50ms (Views: 47.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:12:26 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 68ms (Views: 65.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:15:31 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 63ms (Views: 47.9ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-11 12:15:40 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.7ms)
+  Rendered books/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:17:41 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:17:42 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:17:43 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 30.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:17:43 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:18:15 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:18:16 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at DESC[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:19:05 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 41ms (Views: 35.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:19:06 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:19:07 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:19:07 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:03 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 39ms (Views: 34.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:04 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:07 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:19 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:20 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 44ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:27 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:27 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:28 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:33 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:20:34 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:21:10 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:21:12 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:21:14 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:21:18 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1/" for 127.0.0.1 at 2018-03-11 12:27:37 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 63ms (Views: 33.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/books/2/" for 127.0.0.1 at 2018-03-11 12:27:42 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:30:14 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:30:16 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/2" for 127.0.0.1 at 2018-03-11 12:30:17 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/2/" for 127.0.0.1 at 2018-03-11 12:30:22 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/2/" for 127.0.0.1 at 2018-03-11 12:30:23 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:30:30 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2018-03-11 12:30:31 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2018-03-11 12:35:54 +0530
+  
+SyntaxError (/Users/sb051853/ruby-on-rails/BookReview/app/controllers/books_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/books_controller.rb:47: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/books/1/edit" for 127.0.0.1 at 2018-03-11 12:36:09 +0530
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (3.8ms)
+  Rendered books/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 50ms (Views: 38.5ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/books/1" for 127.0.0.1 at 2018-03-11 12:37:00 +0530
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxwSVKNbffOzhzvZjwlDhhp+TQierwyReNazE6dvBKFvYgBm3kOXoER9Hln01szEy08GonslfjNJ48tAfTzGIg==", "book"=>{"title"=>"The Monk Who Sold His Ferrari ", "description"=>"Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.\" Yet it is easy to forgive the story's simplicity because each kernel of wisdom is framed to address the persistent angst of Western white-collar professionals.", "author"=>"Robin Sharma "}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[33mUPDATE `books` SET `title` = 'The Monk Who Sold His Ferrari ', `description` = 'Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.\" Yet it is easy to forgive the story\'s simplicity because each kernel of wisdom is framed to address the persistent angst of Western white-collar professionals.', `author` = 'Robin Sharma ', `updated_at` = '2018-03-11 07:07:00' WHERE `books`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 4.5ms)
+
+
+  
+ActiveRecord::ValueTooLong (Mysql2::Error: Data too long for column 'description' at row 1: UPDATE `books` SET `title` = 'The Monk Who Sold His Ferrari ', `description` = 'Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.\" Yet it is easy to forgive the story\'s simplicity because each kernel of wisdom is framed to address the persistent angst of Western white-collar professionals.', `author` = 'Robin Sharma ', `updated_at` = '2018-03-11 07:07:00' WHERE `books`.`id` = 1):
+  
+app/controllers/books_controller.rb:28:in `update'
+Started PATCH "/books/1" for 127.0.0.1 at 2018-03-11 12:37:31 +0530
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxwSVKNbffOzhzvZjwlDhhp+TQierwyReNazE6dvBKFvYgBm3kOXoER9Hln01szEy08GonslfjNJ48tAfTzGIg==", "book"=>{"title"=>"The Monk Who Sold His Ferrari ", "description"=>"Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.", "author"=>"Robin Sharma "}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `books` SET `title` = 'The Monk Who Sold His Ferrari ', `description` = 'Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.', `author` = 'Robin Sharma ', `updated_at` = '2018-03-11 07:07:31' WHERE `books`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::ValueTooLong (Mysql2::Error: Data too long for column 'description' at row 1: UPDATE `books` SET `title` = 'The Monk Who Sold His Ferrari ', `description` = 'Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney with a whacked-out schedule and a shameful set of spiritual priorities. Of course it takes a crisis (heart attack) to give Mantle pause. And pause he does--suddenly selling all his beloved possessions to trek India in pursuit of a meaningful existence. The Himalayan gurus along the way give simple advice, such as, \"What lies behind you and what lies before you is nothing compared to what lies within you.', `author` = 'Robin Sharma ', `updated_at` = '2018-03-11 07:07:31' WHERE `books`.`id` = 1):
+  
+app/controllers/books_controller.rb:28:in `update'
+Started PATCH "/books/1" for 127.0.0.1 at 2018-03-11 12:37:43 +0530
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sxwSVKNbffOzhzvZjwlDhhp+TQierwyReNazE6dvBKFvYgBm3kOXoER9Hln01szEy08GonslfjNJ48tAfTzGIg==", "book"=>{"title"=>"The Monk Who Sold His Ferrari ", "description"=>"Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney.", "author"=>"Robin Sharma "}, "commit"=>"Update Book", "id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE `books` SET `title` = 'The Monk Who Sold His Ferrari ', `description` = 'Everyone loves a good fable, and this is certainly one. The protagonist is Julian Mantle, a high-profile attorney.', `author` = 'Robin Sharma ', `updated_at` = '2018-03-11 07:07:43' WHERE `books`.`id` = 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2018-03-11 12:37:43 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/2/" for 127.0.0.1 at 2018-03-11 12:42:10 +0530
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 30.5ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/books/2" for 127.0.0.1 at 2018-03-11 12:42:13 +0530
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LVBAqL26TgZKhf3w+sOeBbTUtTMCcljgCeVj0ySXEUbxLlKawKKkVb1/2HCBHBFHZeX+mef4KkI40BuA/sTTxQ==", "id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM `books` WHERE `books`.`id` = 2[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:42:13 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:42:14 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:42:15 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-03-11 12:42:16 +0530
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (4.2ms)
+  Rendered books/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-03-11 12:42:52 +0530
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Bc+Bf5+vyy+7Okwbk5Af5moDU39Qbtz8MOcvn4gfoXcrrmaQHJHYBSf7CMGnnjM3GH7dtbrkjIsq8O0F0qM2w==", "book"=>{"title"=>"The Leader Who Had No Title", "description"=>"A fantastic book giving the most positive vibes. An inspiration to life.Everything probably is known but has been told in such a nice way. Just love it --Punya on Sep 13, 2012", "author"=>"Robin Sharma "}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`title`, `description`, `author`, `created_at`, `updated_at`) VALUES ('The Leader Who Had No Title', 'A fantastic book giving the most positive vibes. An inspiration to life.Everything probably is known but has been told in such a nice way. Just love it --Punya on Sep 13, 2012', 'Robin Sharma ', '2018-03-11 07:12:52', '2018-03-11 07:12:52')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-11 12:42:52 +0530
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT `books`.* FROM `books` ORDER BY created_at[0m
+  Rendered books/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
